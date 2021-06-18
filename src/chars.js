@@ -1,4 +1,4 @@
-const chars = {
+export default {
     A: {
         len: 4,
         matrix: [
@@ -624,5 +624,3 @@ const chars = {
         ],
     },
 }
-
-export default chars

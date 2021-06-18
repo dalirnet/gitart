@@ -1,23 +1,26 @@
 import _ from 'lodash'
+import path from 'path'
 import dayjs from 'dayjs'
 import dayjsUtc from 'dayjs/plugin/utc.js'
-import dayjsWeekday from 'dayjs/plugin/weekday.js'
+
+/*
+    Load chars
+*/
 import chars from './chars.js'
 
 /* 
-Add dayjs plugin
+    Add dayjs plugin
 */
 dayjs.extend(dayjsUtc)
-dayjs.extend(dayjsWeekday)
 
 /* 
-    Validation object
+    Config object
 */
-const validation = (text, year, cpd) => {
+export default (text, year, cpd) => {
     return _({ text, year, cpd })
         .tap((input) => {
             /* 
-                Text validate
+                Text config
             */
             input.text = _(input.text)
                 .thru((value) => {
@@ -77,6 +80,7 @@ const validation = (text, year, cpd) => {
                     */
                     return {
                         original: value,
+                        cleaned: _.replace(value, /([^\s])\s/g, '$1'),
                         matrix: _.reduce(
                             _.split(value, ''),
                             (keep, char) => {
@@ -117,7 +121,7 @@ const validation = (text, year, cpd) => {
         })
         .tap((input) => {
             /* 
-                Year validate
+                Year config
             */
             input.year = _(input.year)
                 .thru((value) => {
@@ -153,21 +157,25 @@ const validation = (text, year, cpd) => {
         })
         .tap((input) => {
             /* 
-                Commit per day validate (cpd)
+                Commit per day config (cpd)
             */
             input.cpd = _(input.cpd)
-                .thru((i) => {
-                    return _.toSafeInteger(i)
+                .thru((value) => {
+                    return _.toSafeInteger(value)
                 })
-                .thru((i) => {
+                .thru((value) => {
                     /*
                         Limit value
                     */
-                    return _.clamp(i, 1, 20)
+                    return _.clamp(value, 1, 9)
                 })
                 .value()
         })
+        .tap((input) => {
+            /* 
+                Add project path
+            */
+            input.path = path.join(path.resolve('dist'), 'GitArt' + input.year.original)
+        })
         .value()
 }
-
-export default validation

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import _ from 'lodash'
 import yargs from 'yargs'
-import gitart from './src/index.js'
 import { hideBin } from 'yargs/helpers'
+import gitart from './index.js'
 
 /* Init Args */
 const args = yargs(hideBin(process.argv)).argv
