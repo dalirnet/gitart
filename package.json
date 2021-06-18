@@ -1,0 +1,12 @@
+{
+  "name": "gitart",
+  "version": "1.0.0",
+  "description": "fun art with git contributions",
+  "main": "index.js",
+  "repository": "https://github.com/dalirnet/gitart.git",
+  "author": "AmirRezaDalir <dalirnet@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "sysclock": "^1.0.0"
+  }
+}
