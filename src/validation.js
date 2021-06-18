@@ -13,8 +13,8 @@ dayjs.extend(dayjsWeekday)
 /* 
     Validation object
 */
-const validation = (text, year, cpd) =>
-    _({ text, year, cpd })
+const validation = (text, year, cpd) => {
+    return _({ text, year, cpd })
         .tap((input) => {
             /* 
                 Text validate
@@ -81,16 +81,20 @@ const validation = (text, year, cpd) =>
                             _.split(value, ''),
                             (keep, char) => {
                                 /*
-                                        Original matrix (per row)
-                                    */
+                                    Original matrix (per row)
+                                */
                                 const currentChar = _.get(chars, char)
                                 return _.reduce(
                                     _.range(currentChar.len),
                                     (Keeped, index) => {
                                         /*
-                                                Switched matrix (per column)
-                                            */
-                                        Keeped.push(_.map(currentChar.matrix, index))
+                                            Switched matrix (per column)
+                                        */
+                                        Keeped.push(
+                                            _.map(_.map(currentChar.matrix, index), (state) => {
+                                                return _.toSafeInteger(state === '#')
+                                            })
+                                        )
                                         return Keeped
                                     },
                                     keep
@@ -164,5 +168,6 @@ const validation = (text, year, cpd) =>
                 .value()
         })
         .value()
+}
 
 export default validation

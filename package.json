@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "dayjs": "^1.10.5",
+    "fs-extra": "^10.0.0",
     "lodash": "^4.17.21",
     "simple-git": "^2.40.0",
     "sysclock": "^1.0.0",
