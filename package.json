@@ -2,11 +2,19 @@
   "name": "gitart",
   "version": "1.0.0",
   "description": "fun art with git contributions",
-  "main": "index.js",
   "repository": "https://github.com/dalirnet/gitart.git",
-  "author": "AmirRezaDalir <dalirnet@gmail.com>",
   "license": "MIT",
+  "author": "AmirRezaDalir <dalirnet@gmail.com>",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "gitart": "./cli.js"
+  },
   "dependencies": {
-    "sysclock": "^1.0.0"
+    "dayjs": "^1.10.5",
+    "lodash": "^4.17.21",
+    "simple-git": "^2.40.0",
+    "sysclock": "^1.0.0",
+    "yargs": "^17.0.1"
   }
 }
