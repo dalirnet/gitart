@@ -1,8 +1,8 @@
 # GitArt
 
-Fun art with git contributions
+Fun art with git contributions [preview](https://github.com/dalirnet?tab=overview&from=2011-12-01&to=2011-12-31)
 
-![](demo/light.png)
+![light](demo/light.png)
 
 #### Generate
 
