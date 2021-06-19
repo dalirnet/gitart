@@ -1,21 +1,31 @@
 {
-  "name": "gitart",
-  "version": "1.0.0",
-  "description": "fun art with git contributions",
-  "repository": "https://github.com/dalirnet/gitart.git",
-  "license": "MIT",
-  "author": "AmirRezaDalir <dalirnet@gmail.com>",
-  "type": "module",
-  "main": "src/index.js",
-  "bin": {
-    "gitart": "./cli.js"
-  },
-  "dependencies": {
-    "dayjs": "^1.10.5",
-    "fs-extra": "^10.0.0",
-    "lodash": "^4.17.21",
-    "ora": "^5.4.1",
-    "simple-git": "^2.40.0",
-    "yargs": "^17.0.1"
-  }
+    "name": "gitart",
+    "version": "1.0.0",
+    "description": "fun art with git contributions",
+    "repository": "https://github.com/dalirnet/gitart.git",
+    "license": "MIT",
+    "author": "AmirRezaDalir <dalirnet@gmail.com>",
+    "type": "module",
+    "main": "src/index.js",
+    "bin": {
+        "gitart": "./cli.js"
+    },
+    "dependencies": {
+        "dayjs": "^1.10.5",
+        "fs-extra": "^10.0.0",
+        "lodash": "^4.17.21",
+        "ora": "^5.4.1",
+        "simple-git": "^2.40.0",
+        "yargs": "^17.0.1"
+    },
+    "keywords": [
+        "git",
+        "commit",
+        "contributions",
+        "contribute",
+        "fun",
+        "github",
+        "gitlab",
+        "iran"
+    ]
 }
