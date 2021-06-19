@@ -247,7 +247,7 @@ export default {
         ],
     },
     T: {
-        len: 5,
+        len: 3,
         matrix: [
             /* T */
             [' ', ' ', ' '],
