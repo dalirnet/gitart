@@ -46,7 +46,7 @@ export default (text, year, cpd) => {
                     })
                 loading.text = 'Generating ' + _.floor(_.clamp((_.size(contribute) * generated++) / 100, 1, 100)) + '% ...'
             }
-            loading.succeed('Generated "' + config.text.cleaned + '" for the year ' + config.year.original + '.')
+            loading.succeed('Generated "' + config.text.cleaned + '" at ' + config.path)
         })
     } catch ({ message }) {
         loading.fail(message)
