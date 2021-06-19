@@ -19,14 +19,14 @@ npx github:dalirnet/gitart "dalirnet !" --year 2011 --cpd 1
 
 ```bash
 # Out
-# ✔ Generated "DALIRNET !" at /path/to/dist/GitArt2011
+# ✔ Generated "DALIRNET !" at /path/to/GitArts/GitArt2011
 ```
 
 #### Publish
 
 ```bash
 # Change directory
-cd /path/to/dist/GitArt2011
+cd /path/to/GitArts/GitArt2011
 
 # Add remote
 git remote add origin https://github.com/user/GitArt2011.git

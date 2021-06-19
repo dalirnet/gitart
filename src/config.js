@@ -1,5 +1,4 @@
 import _ from 'lodash'
-import url from 'url'
 import path from 'path'
 import dayjs from 'dayjs'
 import dayjsUtc from 'dayjs/plugin/utc.js'
@@ -176,7 +175,7 @@ export default (text, year, cpd) => {
             /* 
                 Add project path
             */
-            input.path = path.join(url.fileURLToPath(import.meta.url), '..', '..', 'dist', 'GitArt' + input.year.original)
+            input.path = path.join(path.resolve('GitArts'), 'GitArt' + input.year.original)
         })
         .value()
 }
