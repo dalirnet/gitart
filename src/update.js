@@ -21,7 +21,7 @@ export default (project) => {
             return update('# GitArt' + '\n')
         },
         head(value) {
-            return update('\n\n' + '### ' + value + '\n')
+            return update('\n\n' + '##### ' + value + '\n')
         },
         list(index) {
             return update(index + 1 + '. Auto commit.' + '\n')
