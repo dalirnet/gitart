@@ -16,8 +16,24 @@ dayjs.extend(dayjsUtc)
 /* 
     Config object
 */
-export default (text, year, cpd) => {
-    return _({ text, year, cpd })
+export default (text, year, gap, cpd) => {
+    return _({ text, year, gap, cpd })
+        .tap((input) => {
+            /* 
+                Gap config
+            */
+            input.gap = _(input.gap)
+                .thru((value) => {
+                    return _.toSafeInteger(value)
+                })
+                .thru((value) => {
+                    /*
+                        Limit value
+                    */
+                    return _.clamp(value, 1, 45)
+                })
+                .value()
+        })
         .tap((input) => {
             /* 
                 Text config
@@ -63,7 +79,7 @@ export default (text, year, cpd) => {
                                     keep.value += char
                                     keep.week += currentCharLen
                                 } else {
-                                    keep.value += '...'
+                                    keep.value += '  .'
                                     keep.week += 3
                                     keep.break = true
                                 }
@@ -71,7 +87,11 @@ export default (text, year, cpd) => {
 
                             return keep
                         },
-                        { value: '', week: 1, break: false }
+                        {
+                            value: '',
+                            week: input.gap,
+                            break: false,
+                        }
                     )
                 })
                 .thru(({ value }) => {

@@ -13,19 +13,19 @@ import loadCommit from './src/commit.js'
 /*
     GitArt function
 */
-export default (text, year, cpd) => {
+export default (text, year, gap, cpd) => {
     const loading = ora('Loading ...').start()
 
     try {
         /*
             Load config
         */
-        const config = loadConfig(text, year, cpd)
+        const config = loadConfig(text, year, gap, cpd)
 
         /*
             Load contribute
-       */
-        const contribute = loadContribute(config.text.matrix.flatted, config.year.from, config.cpd)
+        */
+        const contribute = loadContribute(config.text.matrix.flatted, config.year.from, config.gap, config.cpd)
 
         /*
             Load git
